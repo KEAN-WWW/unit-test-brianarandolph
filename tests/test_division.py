@@ -1,13 +1,15 @@
 import pytest
 from calculator import divide
 
-def test_division():
-    """Test normal division cases."""
-    assert divide(10, 2) == 5
-    assert divide(9, 3) == 3
-    assert divide(7, 1) == 7
+def test_divide_positive():
+    assert divide(6, 3) == 2
 
-def test_divide_zero_exception():
-    """Test that dividing by zero raises ZeroDivisionError."""
+def test_divide_negative():
+    assert divide(-6, 3) == -2
+
+def test_divide_zero_numerator():
+    assert divide(0, 5) == 0
+
+def test_divide_zero_denominator():
     with pytest.raises(ZeroDivisionError):
-        divide(10, 0)
+        divide(5, 0)

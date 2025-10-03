@@ -1,7 +1,10 @@
 from calculator import subtract
 
-def test_subtraction():
-    """Test subtraction function."""
-    assert subtract(10, 3) == 7
-    assert subtract(5, 5) == 0
-    assert subtract(2, 10) == -8
+def test_subtract_positive():
+    assert subtract(5, 3) == 2
+
+def test_subtract_negative():
+    assert subtract(-1, -1) == 0
+
+def test_subtract_zero():
+    assert subtract(5, 0) == 5
